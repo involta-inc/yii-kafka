@@ -1,0 +1,31 @@
+{
+  "name": "involta-inc/yii-kafka",
+  "type": "library",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "php": "^7.4|^8.0",
+    "yiisoft/json": "^1.0",
+    "ext-rdkafka": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Involta\\Yii\\Kafka\\": "src"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0.x-dev"
+    },
+    "config-plugin-options": {
+      "source-directory": "config"
+    },
+    "config-plugin": {
+      "common": "common.php",
+      "params": "params.php"
+    }
+  },
+  "config": {
+    "sort-packages": true
+  }
+}
