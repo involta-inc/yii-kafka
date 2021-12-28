@@ -2,7 +2,8 @@
 
 namespace Involta\Yii\Kafka;
 
-use \RdKafka\Producer as KafkaProducer;
+use RdKafka\Producer as KafkaProducer;
+use RdKafka\ProducerTopic;
 use Yiisoft\Json\Json;
 
 class Producer
@@ -12,7 +13,7 @@ class Producer
     private const DEFAULT_PARTITION = 0;
 
     private KafkaProducer $producer;
-    private $topic;
+    private ?ProducerTopic $topic = null;
 
     public function __construct(Connection $connection)
     {

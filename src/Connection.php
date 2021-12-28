@@ -8,10 +8,14 @@ class Connection
 {
     private Conf $conf;
 
-    public function __construct(BrokerList $list)
+    public function __construct(array $params = [])
     {
         $this->conf = new Conf();
-        $this->conf->set('metadata.broker.list', $list);
+        foreach ($params as $paramName => $paramValue) {
+            if(trim($paramValue) !== '') {
+                $this->conf->set($paramName, $paramValue);
+            }
+        }
     }
 
     public function getConfig(): Conf
